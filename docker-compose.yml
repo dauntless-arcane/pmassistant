@@ -1,0 +1,14 @@
+services:
+  pm-assistant:
+    build: .
+    image: pm-assistant-poc:latest
+    ports:
+      - "${PORT:-4000}:4000"
+    env_file:
+      - server/.env
+    environment:
+      PORT: 4000
+    volumes:
+      - pm-logs:/app/server/logs
+volumes:
+  pm-logs:

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "ROVO_AGENT_BPA",
+    "name": "Business Problem Analyzer",
+    "description": "Analyzes Jira tickets to generate business problem statements and known issues report. ",
+    "triggerExamples": [
+    "Generate a business problem statement for TICKET-123",
+    "Analyze this Jira ticket and tell me the underlying business problem",
+    "What business problem does ticket ENG-451 address?",
+    "Summarize the business justification for this ticket",
+    "Turn this Jira issue into a problem statement",
+    "Help me understand why this ticket matters from a business angle",
+    "kneon issues for tickets"
+  ],
+    "automationWebhookUrl": "https://api.atlassian.com/automation/sc3/o/studio/t/workspace/i/83c62286-84e6-4846-acc8-4b3b7d3101ed/webhooks/a/01a0192c-7b47-7bc7-8635-933c2663e5b7",
+    "secret": "13981d846fca77ce8a41adc3369eb9ea6d576f84",
+    "inputField": "prompt"
+  },
+  {
+    "id": "ROVO_AGENT_DSPORCH",
+    "name": "Disposition Orchestrator V0.1",
+    "description": "Disposition Orchestrator triages PRODMGMT tickets so PMs don't read every one manually. Give it a ticket ID and it searches Jira, Confluence, and GitHub to disposition features — already exists, similar, duplicate, or net new — with confidence scores and links. It flags comment blockers and checks value stream fit. Ends with a clear next action for the PM to validate.",
+    "triggerExamples": [
+    "Disposition PRODMGMT-231",
+    "Triage this feature request ticket for me",
+    "Is this a duplicate of something we already built? Check PRODMGMT-88",
+    "Check if PRODMGMT-140 already exists somewhere in the codebase",
+    "Run disposition on this ticket and give me a confidence score",
+    "Does this feature fit our value stream? Check ticket PRODMGMT-52",
+    "Find similar or duplicate features for this Jira ticket",
+    "What's the next action I should take on PRODMGMT-77?"
+  ],
+    "automationWebhookUrl": "https://api.atlassian.com/automation/sc3/o/studio/t/workspace/i/83c62286-84e6-4846-acc8-4b3b7d3101ed/webhooks/a/01a0198b-dc66-7d2a-bd7b-90ad75ff1d1b",
+    "secret": "68961f6f119bfbf0242f2c2b066fc3729c81c6bd",
+    "inputField": "prompt"
+  },
+  {
+    "id": "ROVO_AGENT_4Sight",
+    "name": "FourSight",
+    "description": "Audits Jira tickets against required fields, generates a scorecard table showing field status and severity, and provides specific recommendations for improvement.",
+    "triggerExamples": [
+      "Audit PROJ-1234 for missing required fields",
+      "Check if this ticket has all the required fields filled in",
+      "Give me a scorecard for JIRA-5678",
+      "What fields are missing on this ticket?",
+      "Run a field completeness check on PROJ-999",
+      "Score this ticket's field quality",
+      "Is this Jira issue missing any mandatory fields?",
+      "Audit my ticket and tell me what needs fixing",
+      "Generate a compliance scorecard for this issue",
+      "Check ticket ABC-42 against our required field standards",
+      "How complete is this ticket's field data?",
+      "Flag severity issues on this Jira ticket's fields",
+      "Review this ticket for field gaps and give recommendations",
+      "Does this issue meet our documentation standards?"
+    ],
+    "automationWebhookUrl": "https://api.atlassian.com/automation/sc3/o/studio/t/workspace/i/83c62286-84e6-4846-acc8-4b3b7d3101ed/webhooks/a/01a03296-f3b0-71c4-aa5a-a5b50179fc19",
+    "secret": "1a1e237cadeb933ff47a2dc5c2129f0b61f75699",
+    "inputField": "prompt"
+  },
+  {
+    "id": "ROVO_AGENT_BugLens",
+    "name": "BugLens",
+    "description": "Performs deep technical triage of bug tickets across PAYOR, SOURCE, PAYSUST, and PORTALIP. Investigates code locations, git history, and design specs to identify root causes and provide evidence-based fix directions.",
+    "triggerExamples": [
+      "Perform a technical triage on PAYOR-1234",
+      "Investigate the root cause for SOURCE-5678",
+      "Analyze this bug and find the relevant code location",
+      "Run a BugLens analysis on PAYSUST-999",
+      "What is the technical mechanism behind this defect?",
+      "Find the originating commit and ticket for this bug",
+      "Check for prior art and similar fixes for PORTALIP-42",
+      "Provide a technical analysis and fix direction for this issue",
+      "Identify the blast radius for the code changes in this ticket",
+      "Compare the current implementation against the design spec for this bug",
+      "Trace this error message to the specific method and line number",
+      "Conduct a deep-dive investigation into this reported defect",
+      "Verify the reporter's claims against the actual code logic",
+      "Is this a genuine defect or a configuration issue?"
+    ],
+    "automationWebhookUrl": "https://api.atlassian.com/automation/sc3/o/studio/t/workspace/i/83c62286-84e6-4846-acc8-4b3b7d3101ed/webhooks/a/01a0567a-6b07-7b69-97ba-38d3015082bc",
+    "secret": "93adaaec9b5e80b043711719ee9e382d13c7e914",
+    "inputField": "prompt"
+  },
+  {
+    "id": "ROVO_FALLBACK_QA",
+    "name": "Rovo Q&A",
+    "description": "Fallback used when no specific automation matches the request. Answers directly using Rovo's connected Jira/Confluence/GitHub knowledge instead of a dedicated agent.",
+    "fallback": true,
+    "automationWebhookUrl": "https://api.atlassian.com/automation/sc3/o/studio/t/workspace/i/83c62286-84e6-4846-acc8-4b3b7d3101ed/webhooks/a/01a03850-7117-75e7-8811-501d7f406d09",
+    "secret": "36012b64960868d905b7b75595e7eb0ede2ebce2",
+    "inputField": "prompt"
+  }
+]
